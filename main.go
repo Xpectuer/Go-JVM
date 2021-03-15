@@ -2,10 +2,11 @@ package main
 import (
     "fmt"
     "strings"
-    "github/Xpectuer/jvmgo/ch02/classpath"
+    "github/Xpectuer/jvmgo/classpath"
 )
 func main() {
     cmd := parseCmd()
+    
     if cmd.versionFlag {
         fmt.Println("version 0.0.1")
     } else if cmd.helpFlag || cmd.class == ""{
