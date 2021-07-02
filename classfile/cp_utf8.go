@@ -14,5 +14,3 @@ func (cui *ConstantUtf8Info) readInfo(reader *ClassReader) {
 func decodeMUTF8(bytes []byte) string {
 	return string(bytes)
 }
-
-

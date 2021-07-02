@@ -8,3 +8,8 @@ type ConstantNameAndTypeInfo struct {
 	nameIndex uint16 
 	descriptionIndex uint16 
 }
+
+func (cnti *ConstantNameAndTypeInfo) readInfo(reader *ClassReader) {
+	cnti.nameIndex = reader.readUint16()
+	cnti.descriptionIndex = reader.readUint16()
+}

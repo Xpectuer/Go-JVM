@@ -31,7 +31,7 @@ func Parse(classData []byte) (cf *ClassFile, err error) {
 	}()
 	cr := &ClassReader{classData}
 	cf = &ClassFile{}
-	cf.read()
+	cf.read(cr)
 	return
 }
 
@@ -86,10 +86,12 @@ func (cf *ClassFile) MajorVersion() uint16 {
 }
 
 func (cf *ClassFile) ConstantPool() ConstantPool {
-
+	return cf.constantPool
 }
 
-func (cf *ClassFile) AccessFlags() uint16 {}
+func (cf *ClassFile) AccessFlags() uint16 {
+	return 0
+}
 
 func (cf *ClassFile) Fields() []*MemberInfo {
 	return cf.fields

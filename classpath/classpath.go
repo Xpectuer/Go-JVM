@@ -26,9 +26,7 @@ func (cp *Classpath) ReadClass(className string) ([]byte, Entry, error) {
 	if data, entry, err := cp.bootClasspath.readClass(className); err == nil {
 		return data, entry, err
 	}
-	// if data, entry, err := cp.extClasspath.readClass(className); err == nil {
-	// 	return data, entry, err
-	// }
+	
 	return cp.userClasspath.readClass(className)
 }
 
