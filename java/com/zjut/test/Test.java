@@ -1,3 +1,5 @@
+package com.zjut.test;
+
 class Test {
 
     private int x = 1;
