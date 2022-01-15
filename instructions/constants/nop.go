@@ -1,8 +1,8 @@
 package constants
 
 import (
+	"github/Xpectuer/jvmgo/instructions/base"
 	"github/Xpectuer/jvmgo/rtda"
-	"github/Xpecuter/jvmgo/base"
 )
 
 /*
