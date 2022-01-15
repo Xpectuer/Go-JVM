@@ -4,7 +4,7 @@
 - [x] class-file-read module
 - [x] class-file-parse module
 
-- [ ] runtime data area
+- [x] runtime data area
 - [ ] instruction set and interpreter
 - [ ]  class and object
 - [ ]  method call and return
