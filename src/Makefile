@@ -1,10 +1,10 @@
-OUT=bin/jvmgo
+OUT=../bin/jvmgo
 
-$(OUT): main.go
+$(OUT):
 	go build -o $@ . 
 
 clean:
-	rm bin/*
+	rm ../bin/*
 
 push:
 	git stage .&&git commit -m 'pushed' 
