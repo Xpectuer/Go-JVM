@@ -13,6 +13,6 @@
 - [ ]  exception handling
 
 
-Debug list:
-- panic: java.lang.ClassFormatError: wrong constant pool tag!
+### Debug list:
+- [x] panic: java.lang.ClassFormatError: wrong constant pool tag!
 
