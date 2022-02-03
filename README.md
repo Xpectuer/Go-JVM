@@ -1,4 +1,4 @@
-# JVM written in golang
+# JVM constructed Go
 ### TODO List
 
 - [x] class-file-read module
