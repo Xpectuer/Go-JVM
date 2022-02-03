@@ -10,42 +10,47 @@ type BytecodeReader struct {
 	pc   int
 }
 
-// avoid creating a new BOR instance each time ins is decoded
-func (bor *BytecodeReader) Reset(code []byte, pc int) {
-	bor.code = code
-	bor.pc = pc
+// avoid creating a new bcr instance each time ins is decoded
+func (bcr *BytecodeReader) Reset(code []byte, pc int) {
+	bcr.code = code
+	bcr.pc = pc
 }
 
-func (bor *BytecodeReader) ReadUint8() uint8 {
+func (bcr *BytecodeReader) ReadUint8() uint8 {
 	// fetch byte code
-	i := bor.code[bor.pc]
-	bor.pc++
+	i := bcr.code[bcr.pc]
+	bcr.pc++
 	return i
 }
 
-func (bor *BytecodeReader) ReadUint16() uint16 {
-	b1 := uint16(bor.ReadUint8())
-	b2 := uint16(bor.ReadUint8())
+func (bcr *BytecodeReader) ReadInt8() int8 {
+	return int8(bcr.ReadUint8())
+}
+
+
+func (bcr *BytecodeReader) ReadUint16() uint16 {
+	b1 := uint16(bcr.ReadUint8())
+	b2 := uint16(bcr.ReadUint8())
 	return (b1 << 8) | b2
 }
 
-func (bor *BytecodeReader) ReadInt16() int16 {
-	return int16(bor.ReadUint16())
+func (bcr *BytecodeReader) ReadInt16() int16 {
+	return int16(bcr.ReadUint16())
 }
 
-func (bor *BytecodeReader) ReadInt32() int32 {
-	b1 := int32(bor.ReadUint8())
-	b2 := int32(bor.ReadUint8())
-	b3 := int32(bor.ReadUint8())
-	b4 := int32(bor.ReadUint8())
+func (bcr *BytecodeReader) ReadInt32() int32 {
+	b1 := int32(bcr.ReadUint8())
+	b2 := int32(bcr.ReadUint8())
+	b3 := int32(bcr.ReadUint8())
+	b4 := int32(bcr.ReadUint8())
 
 	return (b1 << 24) | (b2 << 16) | (b3 << 8) | b4
 }
 
-func (bor *BytecodeReader) ReadInt32s() []int {
+func (bcr *BytecodeReader) ReadInt32s() []int {
 	return []int{}
 }
 
-func (bor *BytecodeReader) SkipPadding() {
+func (bcr *BytecodeReader) SkipPadding() {
 	return
 }
